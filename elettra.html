@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elettra — Chiara Compagnoni</title>
+  <meta name="description" content="Elettra: a project that rethinks the in-car experience for people who aren’t used to driving electric, and teaches them to brake correctly. UX/UI case study.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Elettra — Chiara Compagnoni">
+  <meta property="og:description" content="Elettra: a project that rethinks the in-car experience for people who aren’t used to driving electric, and teaches them to brake correctly. UX/UI case study.">
+  <meta property="og:url" content="https://ccompagnoni.github.io/elettra.html">
+  <meta property="og:image" content="https://ccompagnoni.github.io/assets/img/share/elettra.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/site.css?v=20261114a">
+</head>
+<body data-page="work" data-project="elettra" class="cs">
+  <main id="main">
+    <header class="cs-hero">
+      <div class="cs-hero__first">
+      <div class="cs-hero__media"><img src="assets/img/cover-elettra.jpg" alt="Elettra head-up display seen from the driver's seat" style="object-position:center 40%"></div>
+      <div class="cs-hero__head">
+        <div>
+          <div class="cs-hero__tags tags"><span class="tag">UX/UI</span><span class="tag">Automotive HMI</span><span class="tag">2025</span></div>
+          <h1>Elettra</h1>
+          <p class="cs-hero__lead">Elettra is a project that rethinks the in-car experience for people who aren’t used to driving electric, and teaches them to brake correctly.</p>
+        </div>
+      </div>
+      </div>
+
+      <dl class="cs-facts">
+        <div><dt>Role</dt><dd>UX/UI Designer</dd></div>
+        <div><dt>My part</dt><dd>User research and experience design</dd></div>
+        <div><dt>With</dt><dd>Alessandro Cesa, Clara Di Bella, Margherita Nisco, Nicola Pizzato</dd></div>
+        <div><dt>Timeline</dt><dd>Sep 2024 – Feb 2025</dd></div>
+        <div><dt>Tools</dt><dd>Figma, ProtoPie, Adobe Creative Cloud</dd></div>
+      </dl>
+
+      <div class="cs-tldr">
+        <div><h2>Problem</h2><p>EV drivers keep braking the way they did in petrol cars. They don’t realise they are wasting energy, or how much they could recover by braking correctly. Within 3–6 months they stop trusting the car’s consumption data.</p></div>
+        <div><h2>Solution</h2><p>A bar in the head-up display turns purple when the driver brakes inside the optimal zone, where the battery recovers the most energy. Trip summaries and rewards appear on the central display once the car is parked.</p></div>
+      </div>
+      <p class="cs-links"><a class="btn" href="assets/elettra-report.pdf" target="_blank" rel="noopener">Read the report ↗</a><a class="btn" href="https://www.linkedin.com/feed/update/urn:li:activity:7315018094723137538/" target="_blank" rel="noopener">Watch the video ↗</a></p>
+    </header>
+
+    <div class="cs-layout">
+      <nav class="cs-toc" aria-label="Case study sections"></nav>
+      <div class="cs-body">
+
+        <section class="cs-section" id="solution" data-toc="The solution">
+          <p class="cs-eyebrow">The solution</p>
+          <h2 class="cs-h2">A bar in the head-up display shows how well you are braking.</h2>
+          <p class="cs-text">While you accelerate, the bar is white and rises with your speed. When you brake correctly, inside the optimal zone where the battery recovers the most energy, your speed drops gradually and the bar stays purple. When you brake badly, your speed drops faster and the bar turns red.</p>
+          <figure class="cs-figure">
+            <div class="hud" data-state="power" role="img" aria-label="Animated head-up display: acceleration, then correct braking, then improvable braking">
+              <div class="hud__glass">
+                <span class="hud__speed">0</span>
+                <div class="hud__data">
+                  <span class="hud__label">Power</span>
+                  <div class="hud__track"><i class="hud__bar"></i></div>
+                  <div class="hud__track hud__track--thin"><i class="hud__optimal"></i></div>
+                  <span class="hud__hint">Optimal brake</span>
+                </div>
+              </div>
+            </div>
+            <figcaption>Acceleration → correct braking → improvable braking</figcaption>
+          </figure>
+        </section>
+
+        <section class="cs-section" id="research" data-toc="Research">
+          <p class="cs-eyebrow">Research</p>
+          <h2 class="cs-h2">Electric cars need a different way of braking, and nothing in the car teaches it.</h2>
+          <p class="cs-text">Italdesign asked us to imagine the compact car of 2035. To understand where electric cars leave their drivers alone, we studied how they recover energy and how today’s cockpits present it, then asked the drivers themselves.</p>
+          <div class="cs-stats">
+            <div><strong>15</strong><span>in-depth interviews with drivers aged 24–60</span></div>
+            <div><strong>255</strong><span>questionnaire answers from EV owners and people who never owned one</span></div>
+            <div><strong>3–6</strong><span>months before drivers stop trusting the car’s consumption data</span></div>
+          </div>
+          <blockquote class="cs-quote">“It is unclear what the car is trying to tell me; the interface is confusing.”<cite>Questionnaire respondent</cite></blockquote>
+          <p class="cs-text">The answers pointed to the same gap. An electric car sends energy back to the battery when it brakes, but nothing tells the driver how to brake to recover more, so the numbers on the dashboard stop making sense and drivers stop trusting them.</p>
+          <p class="cs-text">This is why we chose the Energy-Aware Driving scenario: a car that shows, in real time, when energy is being used and when it is being regenerated, and suggests how to drive more efficiently. It applies to every trip, for as long as someone owns the car.</p>
+          <p class="cs-text">The research gave us two personas. Renzo’s fear fades within weeks of owning the car, while Lucia’s habits stay with her for years, so we designed for Lucia and made sure the system also reassures Renzo.</p>
+          <div class="cs-persona">
+            <div class="cs-persona__card">
+              <img src="assets/img/elettra/persona-renzo.jpg" alt="Illustration of Renzo looking worried at the wheel, with a low-battery icon on the display" loading="lazy">
+              <h4>Renzo</h4>
+              <p>A new electric car driver, afraid of running out of charge.</p>
+              <span class="label">Pain points</span>
+              <ul class="cs-list">
+                <li>Feels uneasy leaving home without a full battery</li>
+                <li>Finds it hard to trust the car’s estimated autonomy</li>
+                <li>Worries about finding available charging stations</li>
+              </ul>
+              <span class="label">Needs</span>
+              <p>Reliable information on remaining autonomy.</p>
+            </div>
+            <div class="cs-persona__card cs-persona__card--focus">
+              <img src="assets/img/elettra/persona-lucia.jpg" alt="Illustration of Lucia driving in traffic" loading="lazy">
+              <h4>Lucia <span class="tag">Our focus</span></h4>
+              <p>Bought an electric car to spend less, and drives it the way she drove her old petrol one.</p>
+              <span class="label">Pain points</span>
+              <ul class="cs-list">
+                <li>Has trouble trusting the car’s information because range estimates are inconsistent</li>
+                <li>Her driving habits stop her from saving as much as her EV allows</li>
+              </ul>
+              <span class="label">Needs</span>
+              <p>A way to adapt her driving habits to save resources.</p>
+            </div>
+          </div>
+          <p class="cs-hmw"><small>How might we</small>help EV drivers understand and improve energy recovery while driving, without taking their attention off the road?</p>
+          <p class="cs-text">Our first answer had four parts: a haptic brake pedal, a cockpit showing the optimal speed range, a companion app and “Elettra”, a light that changes with your driving style. But what Lucia needs is to know how to brake while she is braking, and the cockpit can show exactly that. So we focused on the cockpit.</p>
+          <div class="cs-grid cs-grid--4" data-no-zoom>
+            <figure><img src="assets/img/elettra/story-1.jpg" alt="Storyboard sketch: cockpit" loading="lazy"><figcaption>Cockpit display, kept</figcaption></figure>
+            <figure><img src="assets/img/elettra/story-2.jpg" alt="Storyboard sketch: central touchscreen" loading="lazy"><figcaption>Central touchscreen</figcaption></figure>
+            <figure><img src="assets/img/elettra/story-3.jpg" alt="Storyboard sketch: smartphone app" loading="lazy"><figcaption>Companion app</figcaption></figure>
+            <figure><img src="assets/img/elettra/story-4.jpg" alt="Storyboard sketch: Elettra light" loading="lazy"><figcaption>Elettra, the car’s light</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="cs-section" id="testing" data-toc="Testing">
+          <p class="cs-eyebrow">Testing</p>
+          <h2 class="cs-h2">We tested the feedback twice: first on a screen, then behind a wheel.</h2>
+          <p class="cs-text">To find the feedback that made it clearest how to brake to recover the most energy, we built six small driving games in p5.js. You press Enter to accelerate and Space to brake, and you have to stop before the car in front. The road and the physics were the same in every game; only the feedback changed.</p>
+          <div class="cs-grid cs-grid--6" data-no-zoom>
+            <figure><img src="assets/img/elettra/display-1.jpg" alt="Visualisation 1: horizontal bar" loading="lazy"><figcaption>1 · Bar, runner-up</figcaption></figure>
+            <figure><img src="assets/img/elettra/display-2.jpg" alt="Visualisation 2: target circle" loading="lazy"><figcaption>2 · Target</figcaption></figure>
+            <figure class="is-win"><img src="assets/img/elettra/display-3.jpg" alt="Visualisation 3: circular range" loading="lazy"><figcaption>3 · Winner</figcaption></figure>
+            <figure><img src="assets/img/elettra/display-4.jpg" alt="Visualisation 4: icon" loading="lazy"><figcaption>4 · Icon</figcaption></figure>
+            <figure><img src="assets/img/elettra/display-5.jpg" alt="Visualisation 5: traffic-light bar" loading="lazy"><figcaption>5 · Traffic light</figcaption></figure>
+            <figure><img src="assets/img/elettra/display-6.jpg" alt="Visualisation 6: vertical bar" loading="lazy"><figcaption>6 · Vertical</figcaption></figure>
+          </div>
+          <p class="cs-text">Testers picked number 3, a round speedometer with the optimal range on its edge: the shape was familiar and the colour could be read in an instant.</p>
+          <div class="cs-grid cs-grid--2" data-no-zoom>
+            <figure><img src="assets/img/elettra/test-p5-1.jpg" alt="A tester playing the p5.js braking simulations" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/test-p5-2.jpg" alt="A tester braking in the traffic-light visualisation" loading="lazy"></figure>
+          </div>
+          <p class="cs-text">A game on a laptop can’t show what happens while you drive, so we built a simulator with the cockpit behind the wheel, the central display at the side and road video in front, and watched people drive it.</p>
+          <div class="cs-grid cs-row">
+            <figure style="flex:3"><img src="assets/img/elettra/madness-setup.jpg" alt="Driving simulator setup" loading="lazy"><figcaption>Simulator setup</figcaption></figure>
+            <figure style="flex:5.333"><img src="assets/img/elettra/madness-test.jpg" alt="A person testing the simulator" loading="lazy"><figcaption>A person driving the prototype</figcaption></figure>
+          </div>
+          <p class="cs-text">Driving changed what we had learned on screen.</p>
+          <div class="cs-iter">
+            <div class="cs-iter__head"><p>What we saw</p><p>What we changed</p></div>
+            <div><p>Drivers looked down at the speedometer to check their braking.</p><p>We moved speed and braking feedback into the head-up display.</p></div>
+            <div><p>We had first added a “perfect brake” sound, and everyone found it annoying.</p><p>We removed the sound. The bar and the Elettra logo now turn purple instead.</p></div>
+            <div><p>We had first used two levels, “perfect” and “acceptable” braking, and people confused them.</p><p>We kept a single optimal zone.</p></div>
+            <div><p>With the unrealistic pedals, nobody could hold 100 km/h.</p><p>We rebuilt acceleration in ProtoPie, with variables for car mass, friction and pedal time.</p></div>
+          </div>
+          <figure class="cs-figure"><img src="assets/img/elettra/protopie.jpg" alt="ProtoPie prototype with road video and head-up display" loading="lazy"><figcaption>Refined prototype, with road video embedded in ProtoPie and the HUD layered on top.</figcaption></figure>
+        </section>
+
+        <section class="cs-section" id="final" data-toc="Final design">
+          <p class="cs-eyebrow">Final design</p>
+          <h2 class="cs-h2">Feedback while driving, a summary once parked.</h2>
+          <div class="cs-grid cs-grid--2">
+            <figure><img src="assets/img/elettra-optimal.webp" alt="Cockpit with optimal brake recuperation" loading="lazy"><figcaption>Optimal brake: the bar and the battery turn purple.</figcaption></figure>
+            <figure><img src="assets/img/elettra-improvable.webp" alt="Cockpit with improvable brake" loading="lazy"><figcaption>Improvable brake: outside the zone, the bar turns red.</figcaption></figure>
+          </div>
+          <h3 class="cs-h3">The cockpit in different situations</h3>
+          <p class="cs-text">Speed stays on the left and energy on the right. The centre changes with the situation, and “autonomy gained” stays on screen as a reward for good braking.</p>
+          <div class="cs-grid cs-grid--3">
+            <figure><img src="assets/img/elettra/cockpit-maps.jpg" alt="Cockpit with navigation map in the centre" loading="lazy"><figcaption>Navigation</figcaption></figure>
+            <figure><img src="assets/img/elettra/cockpit-adas.jpg" alt="Cockpit with driver-assistance view of the lane and cars ahead" loading="lazy"><figcaption>Driver assistance</figcaption></figure>
+            <figure><img src="assets/img/elettra/cockpit-weather.jpg" alt="Cockpit with weather in the centre" loading="lazy"><figcaption>Weather</figcaption></figure>
+          </div>
+
+          <h3 class="cs-h3">After the drive</h3>
+          <p class="cs-text">While the car is moving, the central display shows only a splash screen. Once parked, it shows a dashboard with the current trip, autonomy and rewards. Every trip stays in a list, with its route, optimal and improvable brakes, kilometres gained and kilometres still gainable, plus a grade. Medals reward the kilometres recovered over time.</p>
+          <figure class="cs-figure"><img src="assets/img/elettra/hud-car.jpg" alt="Elettra head-up display inside the car" loading="lazy"><figcaption>While driving, the head-up display and cockpit give the feedback and the central display stays on the splash screen.</figcaption></figure>
+          <div class="cs-grid cs-grid--2">
+            <figure><img src="assets/img/elettra/after-dashboard.jpg" alt="Central display dashboard with current trip, your trips, rewards and autonomy" loading="lazy"><figcaption>Dashboard</figcaption></figure>
+            <figure><img src="assets/img/elettra/after-trips.jpg" alt="Central display list of past trips" loading="lazy"><figcaption>Your trips</figcaption></figure>
+            <figure><img src="assets/img/elettra/after-trip.jpg" alt="Trip summary with route map, grade, 8 optimal brakes, 2 improvable brakes and kilometres gained" loading="lazy"><figcaption>Trip summary</figcaption></figure>
+            <figure><img src="assets/img/elettra/after-grade.jpg" alt="End-of-trip screen with a B+ grade" loading="lazy"><figcaption>Grade at the end of the trip</figcaption></figure>
+            <figure><img src="assets/img/elettra/after-medal.jpg" alt="New medal screen: Right track, 100 km of autonomy earned" loading="lazy"><figcaption>New medal</figcaption></figure>
+            <figure><img src="assets/img/elettra/after-rewards.jpg" alt="Rewards screen with medal categories" loading="lazy"><figcaption>Rewards</figcaption></figure>
+          </div>
+          <figure class="cs-figure"><video src="assets/video/elettra.mp4" poster="assets/img/elettra-poster.jpg" controls playsinline preload="metadata"></video><figcaption>Project video</figcaption></figure>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="js/main.js?v=20261114a"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sliding Simulator — Chiara Compagnoni</title>
+  <meta name="description" content="Sliding Simulator: a bobsleigh training simulator with cognitive exercises, designed for the Milano-Cortina 2026 Winter Olympics. UX/UI case study.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sliding Simulator — Chiara Compagnoni">
+  <meta property="og:description" content="Sliding Simulator: a bobsleigh training simulator with cognitive exercises, designed for the Milano-Cortina 2026 Winter Olympics. UX/UI case study.">
+  <meta property="og:url" content="https://ccompagnoni.github.io/sliding-simulator.html">
+  <meta property="og:image" content="https://ccompagnoni.github.io/assets/img/share/sliding-simulator.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/site.css?v=20261114a">
+</head>
+<body data-page="work" data-project="sliding-simulator" class="cs">
+  <main id="main">
+    <header class="cs-hero">
+      <div class="cs-hero__first">
+      <div class="cs-hero__media"><img src="assets/img/sliding/hero.jpg" alt="Bobsleigh simulator in front of a curved screen showing the Cortina track" style="object-position:center 55%"></div>
+      <div class="cs-hero__head">
+        <div>
+          <div class="cs-hero__tags tags"><span class="tag">UX/UI</span><span class="tag">Simulation</span><span class="tag">2025</span></div>
+          <h1>Sliding Simulator</h1>
+          <p class="cs-hero__lead">A sliding-sports simulator that recreates the Olympic track in Cortina to train athletes’ memory and anticipation. It was developed ahead of the Milano-Cortina 2026 Winter Olympics.</p>
+        </div>
+      </div>
+      </div>
+
+      <dl class="cs-facts">
+        <div><dt>Role</dt><dd>UX/UI Designer</dd></div>
+        <div><dt>My part</dt><dd>User research, UX/UI and 3D modelling</dd></div>
+        <div><dt>Timeline</dt><dd>Dec 2024 – Dec 2025</dd></div>
+        <div><dt>Tools</dt><dd>Figma, Blender, Unity</dd></div>
+      </dl>
+
+      <div class="cs-tldr">
+        <div><h2>Problem</h2><p>Sliding-sport athletes rarely get to train: there are few tracks, they open only in winter and every run is expensive. Without practice, the memory of the track and the ability to anticipate curves fade.</p></div>
+        <div><h2>Solution</h2><p>A simulator of the Cortina Olympic track with cognitive and dual-task exercises that train memory and anticipation during the descent, and a separate interface for the coach.</p></div>
+      </div>
+      <p class="cs-links"><a class="btn" href="assets/sliding-thesis.pdf" target="_blank" rel="noopener">Read the thesis ↗</a><a class="btn" href="https://www.linkedin.com/posts/polimi_fisipoloralpicentrali-bobclubcristallo-conilombardia-activity-7430551578094362625-MHxQ" target="_blank" rel="noopener">Watch the video ↗</a></p>
+    </header>
+
+    <div class="cs-layout">
+      <nav class="cs-toc" aria-label="Case study sections"></nav>
+      <div class="cs-body">
+        <section class="cs-section" id="problem" data-toc="The problem">
+          <p class="cs-eyebrow">The problem</p>
+          <h2 class="cs-h2">Pilots must know the track by heart, but they rarely get to practise on it.</h2>
+          <p class="cs-text">At over 130 km/h there is no time to react once a curve appears: pilots have to steer before entering it, along a line they already know, because every late correction costs time. Going fast therefore depends on knowing the track by heart and anticipating each curve. Yet there are only a few tracks in the world, they are open only in winter and every run is expensive. Without regular practice, the memory of the track and the ability to anticipate fade.</p>
+
+          <h3 class="cs-h3">How pilots prepare</h3>
+          <div class="cs-cards">
+            <div class="cs-card"><h4>Vision comes first</h4><p>Pilots time their steering on markers along the track, such as poles, trees, shadows and lamp posts.</p></div>
+            <div class="cs-card"><h4>Track walk</h4><p>Before every run they walk the track to memorise the curves and the ice.</p></div>
+            <div class="cs-card"><h4>Visualisation</h4><p>With their eyes closed, they go through the descent curve by curve, imagining every steering movement.</p></div>
+          </div>
+          <blockquote class="cs-quote">“Reacting during a curve means you are already too late.”<cite>Bobsleigh pilot, Axe Racing</cite></blockquote>
+
+          <h3 class="cs-h3">What simulators offer today</h3>
+          <div class="cs-cards">
+            <div class="cs-card"><h4>Realistic tracks</h4><p>Simulators have moved from fixed platforms to motion systems and VR, with more and more accurate tracks.</p></div>
+            <div class="cs-card"><h4>No mental training</h4><p>None of the simulators analysed includes cognitive or dual-task exercises, although pilots need them.</p></div>
+            <div class="cs-card"><h4>Two interfaces</h4><p>Other sports simulators keep the athlete’s display minimal and give the coach a dashboard for modes, difficulty and data.</p></div>
+          </div>
+
+          <h3 class="cs-h3">Dual-task training</h3>
+          <p class="cs-text">Working memory is limited. Adding a second task while steering, such as remembering a sequence or reacting to a cue, recreates the mental load of a race. Training under that load helps pilots automate their gestures and focus on what matters.</p>
+          <p class="cs-hmw"><small>How might we</small>train a pilot’s memory and anticipation in a simulator, without breaking the immersion of the descent?</p>
+        </section>
+
+        <section class="cs-section" id="users" data-toc="Users">
+          <p class="cs-eyebrow">Users</p>
+          <h2 class="cs-h2">The pilot, the coach and the technician need different things from the same system.</h2>
+          <h3 class="cs-h3">Three personas</h3>
+          <div class="cs-persona cs-persona--rows">
+            <div class="cs-persona__card">
+              <picture><source media="(max-width: 809px)" srcset="assets/img/sliding/persona-alex-wide.jpg"><img src="assets/img/sliding/persona-alex.jpg" alt="Portrait of Alex, a bobsleigh athlete wearing a black beanie" loading="lazy"></picture>
+              <div><span class="label">Athlete</span><h4>Alex</h4></div>
+              <div><span class="label">Goal</span><p>Learn a new track and its best line as quickly as possible.</p></div>
+              <div><span class="label">Needs</span><ul class="cs-list"><li>A realistic descent</li><li>Clear feedback on each run</li><li>An interface that lets him focus on driving</li></ul></div>
+            </div>
+            <div class="cs-persona__card">
+              <picture><source media="(max-width: 809px)" srcset="assets/img/sliding/persona-umberto-wide.jpg"><img src="assets/img/sliding/persona-umberto.jpg" alt="Portrait of Umberto, a coach with a beard, a beanie and a ski jacket" loading="lazy"></picture>
+              <div><span class="label">Coach</span><h4>Umberto</h4></div>
+              <div><span class="label">Goal</span><p>Design training routines and follow each athlete’s progress over time.</p></div>
+              <div><span class="label">Needs</span><ul class="cs-list"><li>One place for every athlete’s data</li><li>Results he can read quickly</li><li>No technical setup</li></ul></div>
+            </div>
+            <div class="cs-persona__card">
+              <picture><source media="(max-width: 809px)" srcset="assets/img/sliding/persona-giacomo-wide.jpg"><img src="assets/img/sliding/persona-giacomo.jpg" alt="Portrait of Giacomo, a technician with glasses and a shirt" loading="lazy"></picture>
+              <div><span class="label">Technician</span><h4>Giacomo</h4></div>
+              <div><span class="label">Goal</span><p>Make the simulator as precise and reliable as possible.</p></div>
+              <div><span class="label">Needs</span><ul class="cs-list"><li>Advanced settings and diagnostic data</li><li>Real-time monitoring</li><li>Analytics for debugging and maintenance</li></ul></div>
+            </div>
+          </div>
+          <p class="cs-text">The system is split in two: the pilot sees only the first-person track on the curved screen, while coaches and technicians use a second interface on an external computer.</p>
+        </section>
+
+        <section class="cs-section" id="exercises" data-toc="Exercises">
+          <p class="cs-eyebrow">Exercises</p>
+          <h2 class="cs-h2">Three exercises for four training needs: repetition, visualisation, reactivity and anticipation.</h2>
+          <p class="cs-text">The coach sets the difficulty of each exercise on a setup screen, with a preview of what will happen on the track.</p>
+          <h3 class="cs-h3">Track Run</h3>
+          <p class="cs-text">Pilots can repeat the full track or a chosen section as many times as they want, without the limits of a real track. This builds muscle memory and collects data on every run.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-setup-track.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor switches the Track Run setup between full track and partial track"></video><figcaption>A dual slider selects the section of the track to repeat.</figcaption></figure>
+          <h3 class="cs-h3">Bubble Memory</h3>
+          <p class="cs-text">Up to 14 bubbles appear at the points where pilots usually take their references. Each one shows a colour, a number or both, and at the end the pilot reports the whole sequence.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-setup-bubble.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor changes the bubble characteristics and drags the slider from 8 to 14 bubbles"></video><figcaption>More bubbles and more characteristics make the exercise harder.</figcaption></figure>
+          <h3 class="cs-h3">Blind Curves</h3>
+          <p class="cs-text">Some sections of the track go black. The pilot sets the trajectory before the curve, keeps control by relying on body sensations, and corrects as soon as vision returns.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-setup-blind.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor switches the Blind Curves setup between a percentage of curves and curves picked by hand"></video><figcaption>The coach chooses a percentage of random curves or picks them one by one.</figcaption></figure>
+        </section>
+
+        <section class="cs-section" id="environment" data-toc="3D environment">
+          <p class="cs-eyebrow">3D environment</p>
+          <h2 class="cs-h2">The Olympic track, modelled while it was still under construction.</h2>
+          <p class="cs-text">The Cortina Sliding Centre was reconstructed from its executive project, topographic data and aerial photos. A point cloud became the track mesh, then came the surroundings, all following the International Bobsleigh and Skeleton Federation rules.</p>
+          <div class="cs-grid">
+            <figure class="cs-compare" data-compare>
+              <div class="cs-compare__labels"><span>Blender</span><span>Unity</span></div>
+              <div class="cs-compare__box">
+                <img src="assets/img/sliding/model-top-unity.jpg" alt="Top view of the textured track in Unity" loading="lazy">
+                <img class="cs-compare__before" src="assets/img/sliding/model-top-blender.jpg" alt="Top view of the whole track and forest in Blender" loading="lazy">
+                <span class="cs-compare__handle" aria-hidden="true">↔</span>
+                <input type="range" min="0" max="100" value="50" aria-label="Compare the model in Blender and Unity">
+              </div>
+            </figure>
+          </div>
+          <div class="cs-grid">
+            <figure class="cs-compare" data-compare>
+              <div class="cs-compare__labels"><span>Shaded</span><span>Wireframe</span></div>
+              <div class="cs-compare__box">
+                <img src="assets/img/sliding/model-pov-wire.jpg" alt="A curve from the pilot’s point of view in wireframe" loading="lazy">
+                <img class="cs-compare__before" src="assets/img/sliding/model-pov-shaded.jpg" alt="The same curve from the pilot’s point of view, shaded" loading="lazy">
+                <span class="cs-compare__handle" aria-hidden="true">↔</span>
+                <input type="range" min="0" max="100" value="50" aria-label="Compare the shaded view and the wireframe">
+              </div>
+            </figure>
+          </div>
+          <figure class="cs-figure"><img src="assets/img/sliding/render-track.jpg" alt="Final render of the track from the pilot’s point of view, under the wooden roof with the mountains behind" loading="lazy"></figure>
+          <div class="cs-materials">
+            <figure><img src="assets/img/sliding/material-concrete.webp" alt="Rough concrete material on a sphere" loading="lazy"><figcaption class="label">Concrete</figcaption></figure>
+            <figure><img src="assets/img/sliding/material-wood.webp" alt="Light wood material on a sphere" loading="lazy"><figcaption class="label">Wood</figcaption></figure>
+            <figure><img src="assets/img/sliding/material-ground.webp" alt="Soil with low green plants, material on a sphere" loading="lazy"><figcaption class="label">Ground</figcaption></figure>
+            <figure><img src="assets/img/sliding/material-ice.webp" alt="Glossy ice material on a sphere" loading="lazy"><figcaption class="label">Ice</figcaption></figure>
+            <figure><img src="assets/img/sliding/material-metal.webp" alt="Grey metal panel material with bolts on a sphere" loading="lazy"><figcaption class="label">Metal panels</figcaption></figure>
+          </div>
+        </section>
+        <section class="cs-section" id="final" data-toc="Final design">
+          <p class="cs-eyebrow">Final design</p>
+          <h2 class="cs-h2">A simulator that trains the pilot’s memory and anticipation during the descent.</h2>
+          <p class="cs-text">While steering down a virtual copy of the Cortina track, the pilot repeats sections, memorises a sequence of bubbles, or drives through curves that go black.</p>
+          <div class="cs-grid cs-grid--3">
+            <figure><video src="assets/video/sliding-trackrun.mp4" autoplay muted loop playsinline aria-label="Pilot view descending the virtual Cortina track"></video><figcaption>Track Run: repeat the full track or a section</figcaption></figure>
+            <figure><video src="assets/video/sliding-bubble.mp4" autoplay muted loop playsinline aria-label="Pilot view with a numbered bubble appearing along the track"></video><figcaption>Bubble Memory: remember what appears along the track</figcaption></figure>
+            <figure><video src="assets/video/sliding-blind.mp4" autoplay muted loop playsinline aria-label="Pilot view where the screen goes black during a curve"></video><figcaption>Blind Curves: keep control when the view goes black</figcaption></figure>
+          </div>
+          <p class="cs-text">For the coach, the interface follows the order of a real training session.</p>
+          <h3 class="cs-h3">Access</h3>
+          <p class="cs-text">Logging in takes only a nickname, because the profile is used just to calibrate the pilot’s point of view.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-ui-access.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor chooses the discipline, logs in, opens the profile and logs out"></video><figcaption>Start → Log-in → Homepage → Profile</figcaption></figure>
+          <h3 class="cs-h3">Training</h3>
+          <p class="cs-text">During the run, the pilot sees only the track. Time, speed and the essential controls are on the coach’s screen.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-ui-training.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor opens Bubble Memory, presses Play, tries to exit, resumes the run, then returns home after a did-not-finish message"></video><figcaption>Homepage → Setup → Simulation → Exit → Did not finish</figcaption></figure>
+          <h3 class="cs-h3">Review</h3>
+          <p class="cs-text">After Bubble Memory, coach and athlete rebuild the sequence, then see which answers were wrong.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-ui-review.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor fills in the bubbles with the keypads, corrects one and verifies the results"></video><figcaption>Recall → Results</figcaption></figure>
+          <h3 class="cs-h3">Statistics</h3>
+          <p class="cs-text">Every result is saved automatically and can be found by date. Each exercise has its own view of how the athlete is progressing.</p>
+          <figure class="cs-figure"><video src="assets/video/sliding-ui-stats.mp4?v=2" autoplay muted loop playsinline aria-label="A cursor opens the statistics of each exercise from the profile, selects sessions and uses the filters"></video><figcaption>Full Track Run → Partial Track Run → Bubble Memory → Blind Curves</figcaption></figure>
+          <h3 class="cs-h3">Built for Hexalab</h3>
+          <p class="cs-text">The interface was prototyped in Figma and implemented in Unity. At Hexalab, the pilot sits on a motion platform in front of a curved screen, while the coach follows the session from a separate computer.</p>
+          <figure class="cs-figure"><img src="assets/img/sliding/hexalab.jpg" alt="Render of the Hexalab simulator: a red bobsleigh on a platform inside the curved screen, with the coach’s monitor in front" loading="lazy"><figcaption>The simulator at Hexalab, with the curved screen for the pilot and a separate monitor for the coach.</figcaption></figure>
+        </section>
+
+        <section class="cs-section" id="next" data-toc="Test &amp; next steps">
+          <p class="cs-eyebrow">Test &amp; next steps</p>
+          <h2 class="cs-h2">The interface was tested with non-professionals.</h2>
+          <p class="cs-text">People of different ages and levels of tech familiarity tried the prototype on a computer, imagining they were a coach bringing an athlete to the simulator. They thought aloud while creating an account, running Bubble Memory and reading the statistics.</p>
+          <div class="cs-stats">
+            <div><strong>6.34<small>/7</small></strong><span>average Single Ease Question score</span></div>
+            <div><strong>89<small>/100</small></strong><span>System Usability Scale score</span></div>
+          </div>
+          <p class="cs-text">The main changes were keywords on the exercise cards, undo and redo in the recall screen, and separate views for full and partial runs in the statistics.</p>
+          <h3 class="cs-h3">The limits of the test</h3>
+          <p class="cs-text">The participants weren’t bobsleigh professionals, and they used a prototype instead of the simulator. The test shows whether the interface is clear, but not whether it works in real training, especially the statistics.</p>
+          <h3 class="cs-h3">Next steps</h3>
+          <p class="cs-text">The next round of tests should be with professional athletes.</p>
+          <ul class="cs-list">
+            <li>Test with athletes and industry experts, especially the statistics.</li>
+            <li>Validate the VR version, including motion sickness.</li>
+            <li>Extend the simulator to skeleton and luge.</li>
+            <li>Increase realism with a 3D scan of the track, and explore exercises that adapt with AI.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="js/main.js?v=20261114a"></script>
+</body>
+</html>

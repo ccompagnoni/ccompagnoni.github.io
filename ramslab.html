@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Virtual environments for simulators — Chiara Compagnoni</title>
+  <meta name="description" content="Generating virtual environments for RAMSLab’s simulators efficiently and automatically: techniques to keep scenes light, physics-ready and Unity-ready, tested by hand and with AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Virtual environments for simulators — Chiara Compagnoni">
+  <meta property="og:description" content="Generating virtual environments for RAMSLab’s simulators efficiently and automatically: techniques to keep scenes light, physics-ready and Unity-ready, tested by hand and with AI.">
+  <meta property="og:url" content="https://ccompagnoni.github.io/ramslab.html">
+  <meta property="og:image" content="https://ccompagnoni.github.io/assets/img/share/ramslab.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/site.css?v=20261114a">
+</head>
+<body data-page="work" data-project="ramslab" class="cs">
+  <main id="main">
+    <header class="cs-hero">
+      <div class="cs-hero__first">
+      <div class="cs-hero__media"><img src="assets/img/ramslab/cover.jpg" alt="Aerial render of the Oltrepò Pavese hills: vineyards, farmhouses and the winding road rebuilt for the driving simulator"></div>
+      <div class="cs-hero__head">
+        <div>
+          <div class="cs-hero__tags tags"><span class="tag">3D modelling</span><span class="tag">AI</span><span class="tag">Simulation</span><span class="tag">2026</span></div>
+          <h1>Virtual environments for simulators</h1>
+          <p class="cs-hero__lead">How to generate roads, towns and trails automatically for simulators: real enough to be believed, light enough for dynamic, immersive simulation.</p>
+        </div>
+      </div>
+      </div>
+
+      <dl class="cs-facts">
+        <div><dt>Role</dt><dd>Design Researcher</dd></div>
+        <div><dt>My part</dt><dd>Research, 3D environments and AI workflow</dd></div>
+        <div><dt>With</dt><dd>Francesco Bottino</dd></div>
+        <div><dt>Timeline</dt><dd>May 2026 – now</dd></div>
+        <div><dt>Tools</dt><dd>Blender, Unity, Unreal Engine, Claude</dd></div>
+      </dl>
+      <div class="cs-tldr">
+        <div><h2>The need</h2><p>Simulation needs new virtual environments, fast. To generate them automatically, we first need the techniques that keep a scene light enough to run smoothly and ready to use with physics and in Unity.</p></div>
+        <div><h2>The outcome</h2><p>An AI tool that turns a description into a virtual environment that is realistic, light and ready for simulation. It picks the right technique for terrain, roads, buildings and vegetation, and checks the result against the simulator’s requirements.</p></div>
+      </div>
+    </header>
+
+    <div class="cs-layout">
+      <nav class="cs-toc" aria-label="Case study sections"></nav>
+      <div class="cs-body">
+        <section class="cs-section" id="goal" data-toc="The goal">
+          <p class="cs-eyebrow">The goal</p>
+          <h2 class="cs-h2">Realistic environments that stay light enough for the simulator.</h2>
+          <p class="cs-text">Every simulation requires a virtual environment, whether a road, an urban street or a mountain trail. Visual realism is necessary but not sufficient: the scene must sustain a stable frame rate in real time, provide reliable surfaces for vehicle and pedestrian physics, and integrate directly into Unity. The following requirements apply to every environment.</p>
+          <div class="cs-cards">
+            <div class="cs-card"><h4>Performance</h4><p>A defined triangle budget and levels of detail, so that only nearby geometry is rendered in full.</p></div>
+            <div class="cs-card"><h4>Realism</h4><p>Real terrain and road layouts, buildings true to the local architecture, and markings and signage that comply with traffic regulations.</p></div>
+            <div class="cs-card"><h4>Immersion</h4><p>Vegetation as crossed billboards with alpha clipping, stereo-compatible shaders and consistent colour.</p></div>
+            <div class="cs-card"><h4>Unity integration</h4><p>FBX tiles and a Unity package that rebuilds the scene and its materials automatically.</p></div>
+          </div>
+        </section>
+
+        <section class="cs-section" id="manual" data-toc="Manual workflow">
+          <p class="cs-eyebrow">Manual workflow</p>
+          <h2 class="cs-h2">Open map data as a base, every layer finished by hand.</h2>
+          <p class="cs-text">We started with a manual pipeline in Blender: OpenStreetMap and Blosm for roads and footprints, Buildify for the buildings, everything else by hand, then tiles for Unity. This phase defined what works best in the simulator, which texture sources to use and an efficient workflow from an empty scene to simulation.</p>
+          <h3 class="cs-h3">A town</h3>
+          <div class="cs-grid cs-grid--2">
+            <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/town-top.jpg" alt="Top view of the town: road network with a roundabout, Buildify buildings and green lots" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/town-street-brick.jpg" alt="Driver’s view of a straight street between brick and stone buildings lined with trees" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/town-street.jpg" alt="Driver’s view of a street with a dashed centre line, ochre buildings with shutters and trees" loading="lazy"></figure>
+          </div>
+          <div class="cs-materials">
+            <figure><img src="assets/img/ramslab/material-brick.webp?v=2" alt="Brick wall material on a sphere" loading="lazy"><figcaption class="label">Brick</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-stone.webp?v=2" alt="Rubble stone wall material on a sphere" loading="lazy"><figcaption class="label">Stone</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-concrete.webp?v=2" alt="Concrete panel material on a sphere" loading="lazy"><figcaption class="label">Concrete</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-grass.webp" alt="Grass material on a sphere" loading="lazy"><figcaption class="label">Grass</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-soil.webp" alt="Bare soil material on a sphere" loading="lazy"><figcaption class="label">Soil</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-paving.webp" alt="Stone paving slab material on a sphere" loading="lazy"><figcaption class="label">Paving</figcaption></figure>
+          </div>
+          <h3 class="cs-h3">A motorway</h3>
+          <div class="cs-grid cs-grid--2">
+            <figure><img src="assets/img/ramslab/motorway-gantry.jpg" alt="Driver’s view of the motorway under a variable message sign announcing roadworks and a compulsory exit" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/motorway-viaduct.jpg" alt="Three-lane carriageway on a viaduct between guardrails and mesh safety barriers" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/motorway-tunnel.jpg" alt="Inside a motorway tunnel with lane markings and guardrails, the exit light in the distance" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/motorway-services.jpg" alt="Motorway with a service area sign at 500 m and a noise barrier with bird stickers" loading="lazy"></figure>
+          </div>
+          <div class="cs-materials">
+            <figure><img src="assets/img/ramslab/material-sign.webp" alt="Green motorway direction sign material on a sphere" loading="lazy"><figcaption class="label">Road sign</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-concrete-wall.webp" alt="Cast concrete wall material on a sphere" loading="lazy"><figcaption class="label">Concrete</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-verge.webp" alt="Roadside grass material on a sphere" loading="lazy"><figcaption class="label">Grass</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-rust.webp" alt="Rusted steel material on a sphere" loading="lazy"><figcaption class="label">Rusted steel</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-asphalt.webp" alt="Asphalt material on a sphere" loading="lazy"><figcaption class="label">Asphalt</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-mesh.webp" alt="Metal grating material on a sphere, see-through" loading="lazy"><figcaption class="label">Grating</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="cs-section" id="ai" data-toc="AI-assisted workflow">
+          <p class="cs-eyebrow">AI-assisted workflow</p>
+          <h2 class="cs-h2">An AI agent builds the place in Blender, following the rules of the simulation.</h2>
+          <p class="cs-text">The manual workflow is now automated. Claude works inside Blender and writes the Python that repeats the same steps, from data to Unity, following the rules defined by hand. Every layer is reviewed against the requirements and sent back until it is right.</p>
+          <h3 class="cs-h3">Oltrepò: a real road in the vineyards</h3>
+          <p class="cs-text">A real road in the Oltrepò hills, built on real data: the Regione Lombardia terrain model for every climb and descent, aerial photos for the vine rows, and OpenStreetMap for roads, buildings, woods, hedges and walls. The vegetation is made of cut-out images of local species on crossed planes.</p>
+          <div class="cs-grid cs-grid--2">
+            <figure style="grid-column: 1 / -1"><video src="assets/video/oltrepo-drive.mp4?v=8" poster="assets/img/ramslab/oltrepo-drive.jpg?v=8" autoplay muted loop playsinline aria-label="Drone-style flight along the Oltrepò road between vineyards and farmhouses"></video></figure>
+            <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/oltrepo-ridge.jpg" alt="The Oltrepò road along a ridge, with trees, a farmhouse and hills in the distance" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/oltrepo-vines.jpg" alt="A vine row seen from its end, generated procedurally" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/oltrepo-unity.jpg" alt="The same road in Unity, from the driver’s height between vineyards" loading="lazy"></figure>
+          </div>
+          <div class="cs-materials">
+            <figure><img src="assets/img/ramslab/material-aerial.webp" alt="Aerial photo of vineyards used as ground texture, on a sphere" loading="lazy"><figcaption class="label">Aerial photo</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-plaster.webp" alt="Weathered plaster wall material on a sphere" loading="lazy"><figcaption class="label">Plaster</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-vine.webp" alt="Vine leaf billboard material on a sphere" loading="lazy"><figcaption class="label">Vine leaves</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-road.webp" alt="Worn asphalt material on a sphere" loading="lazy"><figcaption class="label">Asphalt</figcaption></figure>
+          </div>
+          <h3 class="cs-h3">A mountain trail</h3>
+          <p class="cs-text">Here the terrain already existed: the work was to texture it and add the vegetation, keeping the trail clear and walkable.</p>
+          <div class="cs-grid cs-grid--2">
+            <figure style="grid-column: 1 / -1"><video src="assets/video/mountain-walk.mp4?v=9" poster="assets/img/ramslab/mountain-walk.jpg?v=9" autoplay muted loop playsinline aria-label="Walking along the mountain trail through meadows and conifer forest, towards rocky peaks"></video></figure>
+            <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/mountain-top.jpg" alt="Aerial view of the trail network winding through meadows and conifer forests" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/mountain-crossing.jpg" alt="Two trails crossing in a clearing, seen from above between conifers" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/mountain-trail-view.jpg" alt="Eye-level view of the gravel trail through a meadow towards the forest and mountains" loading="lazy"></figure>
+          </div>
+          <div class="cs-materials">
+            <figure><img src="assets/img/ramslab/material-rock-face.webp" alt="Rock face material with patches of moss and snow, on a sphere" loading="lazy"><figcaption class="label">Rock</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-terrain-map.webp" alt="Colour map of the mountain terrain with trails, meadows and forest, on a sphere" loading="lazy"><figcaption class="label">Terrain map</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-mossy-rock.webp" alt="Mossy rock material on a sphere" loading="lazy"><figcaption class="label">Mossy rock</figcaption></figure>
+            <figure><img src="assets/img/ramslab/material-trees.webp" alt="Conifer billboard atlas on a sphere, see-through" loading="lazy"><figcaption class="label">Conifers</figcaption></figure>
+          </div>
+          <h3 class="cs-h3">A Milan city street</h3>
+          <div class="cs-grid cs-grid--2">
+            <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/cagliero-top.jpg" alt="Top view of the Milan neighbourhood: red roofs, courtyards, crossings and parked cars" loading="lazy"></figure>
+            <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/cagliero-aerial.jpg?v=2" alt="Aerial view of the neighbourhood in late afternoon light: blocks of flats, red roofs and tree-lined streets" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/cagliero-crossing.jpg" alt="Street level at a crossing: parked cars, lane markings and tall blocks of flats" loading="lazy"></figure>
+            <figure><img src="assets/img/ramslab/cagliero-street.jpg?v=2" alt="A street running past an underpass, with street lamps, zebra crossings and parked cars" loading="lazy"></figure>
+          </div>
+        </section>
+
+        <section class="cs-section" id="techniques" data-toc="What keeps it light">
+          <p class="cs-eyebrow">What keeps it light</p>
+          <h2 class="cs-h2">Detail only where people drive, walk and look.</h2>
+          <p class="cs-text">The two workflows turned into a set of techniques that cut the weight of a scene without losing what matters for the simulation.</p>
+          <div class="cs-cards">
+            <div class="cs-card"><h4>Exact where you move</h4><p>The terrain is simplified everywhere except on roads and trails, where the geometry stays exact.</p></div>
+            <div class="cs-card"><h4>Only what can be seen</h4><p>Visibility is computed from eye height along the route; hidden trees and stones are removed.</p></div>
+            <div class="cs-card"><h4>Trees as billboards</h4><p>Two planes crossed at right angles: four triangles per plant.</p></div>
+          </div>
+        </section>
+
+        <section class="cs-section" id="next" data-toc="Next steps">
+          <p class="cs-eyebrow">Next steps</p>
+          <h2 class="cs-h2">Towards software that builds a simulation-ready map from a single prompt.</h2>
+          <p class="cs-text">The next step is a tool, built on skills and agents, that already knows the simulator’s requirements and the techniques defined in this project. Choose a place, and it is reconstructed as faithfully as possible, from terrain and roads to buildings, vegetation and signage, ready for simulation.</p>
+          <h3 class="cs-h3">What still needs work</h3>
+          <ul class="cs-list">
+            <li>Every step still needs a precise brief and a human review.</li>
+            <li>Procedural objects can look repetitive at close range, buildings in particular.</li>
+            <li>Roundabouts, underpasses, overpasses and complex junctions are still modelled by hand.</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </main>
+  <script src="js/main.js?v=20261114a"></script>
+</body>
+</html>
