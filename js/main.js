@@ -167,7 +167,7 @@ function initStickerDrag() {
 function initClock() {
   const el = document.querySelector("[data-clock]");
   if (!el) return;
-  const fmt = new Intl.DateTimeFormat("en-US", { hour: "numeric", minute: "2-digit", timeZone: "Europe/Rome" });
+  const fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hourCycle: "h23", timeZone: "Europe/Rome" });
   const tick = () => (el.textContent = fmt.format(new Date()));
   tick();
   setInterval(tick, 10_000);
