@@ -73,7 +73,7 @@
           <p class="cs-eyebrow">Research</p>
           <h2 class="cs-h2">Electric cars need a different way of braking, and nothing in the car teaches it.</h2>
           <p class="cs-text">Italdesign asked us to imagine the compact car of 2035. To understand where electric cars leave their drivers alone, we studied how they recover energy and how today’s cockpits present it, then asked the drivers themselves.</p>
-          <div class="cs-stats">
+          <div class="cs-stats cs-stats--stack">
             <div><strong>15</strong><span>in-depth interviews with drivers aged 24–60</span></div>
             <div><strong>255</strong><span>questionnaire answers from EV owners and people who never owned one</span></div>
             <div><strong>3–6</strong><span>months before drivers stop trusting the car’s consumption data</span></div>
@@ -124,12 +124,12 @@
           <h2 class="cs-h2">We tested the feedback twice: first on a screen, then behind a wheel.</h2>
           <p class="cs-text">To find the feedback that made it clearest how to brake to recover the most energy, we built six small driving games in p5.js. You press Enter to accelerate and Space to brake, and you have to stop before the car in front. The road and the physics were the same in every game; only the feedback changed.</p>
           <div class="cs-grid cs-grid--6" data-no-zoom>
-            <figure><img src="assets/img/elettra/display-1.jpg" alt="Visualisation 1: horizontal bar" loading="lazy"><figcaption>1 · Bar, runner-up</figcaption></figure>
-            <figure><img src="assets/img/elettra/display-2.jpg" alt="Visualisation 2: target circle" loading="lazy"><figcaption>2 · Target</figcaption></figure>
+            <figure><img src="assets/img/elettra/display-1.jpg" alt="Visualisation 1: horizontal bar" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/display-2.jpg" alt="Visualisation 2: target circle" loading="lazy"></figure>
             <figure class="is-win"><img src="assets/img/elettra/display-3.jpg" alt="Visualisation 3: circular range" loading="lazy"><figcaption>3 · Winner</figcaption></figure>
-            <figure><img src="assets/img/elettra/display-4.jpg" alt="Visualisation 4: icon" loading="lazy"><figcaption>4 · Icon</figcaption></figure>
-            <figure><img src="assets/img/elettra/display-5.jpg" alt="Visualisation 5: traffic-light bar" loading="lazy"><figcaption>5 · Traffic light</figcaption></figure>
-            <figure><img src="assets/img/elettra/display-6.jpg" alt="Visualisation 6: vertical bar" loading="lazy"><figcaption>6 · Vertical</figcaption></figure>
+            <figure><img src="assets/img/elettra/display-4.jpg" alt="Visualisation 4: icon" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/display-5.jpg" alt="Visualisation 5: traffic-light bar" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/display-6.jpg" alt="Visualisation 6: vertical bar" loading="lazy"></figure>
           </div>
           <p class="cs-text">Testers picked number 3, a round speedometer with the optimal range on its edge: the shape was familiar and the colour could be read in an instant.</p>
           <div class="cs-grid cs-grid--2" data-no-zoom>
@@ -138,8 +138,8 @@
           </div>
           <p class="cs-text">A game on a laptop can’t show what happens while you drive, so we built a simulator with the cockpit behind the wheel, the central display at the side and road video in front, and watched people drive it.</p>
           <div class="cs-grid cs-row">
-            <figure style="flex:3"><img src="assets/img/elettra/madness-setup.jpg" alt="Driving simulator setup" loading="lazy"><figcaption>Simulator setup</figcaption></figure>
-            <figure style="flex:5.333"><img src="assets/img/elettra/madness-test.jpg" alt="A person testing the simulator" loading="lazy"><figcaption>A person driving the prototype</figcaption></figure>
+            <figure style="flex:3"><img src="assets/img/elettra/madness-setup.jpg" alt="Driving simulator setup" loading="lazy"></figure>
+            <figure style="flex:5.333"><img src="assets/img/elettra/madness-test.jpg" alt="A person testing the simulator" loading="lazy"></figure>
           </div>
           <p class="cs-text">Driving changed what we had learned on screen.</p>
           <div class="cs-iter">
@@ -162,23 +162,23 @@
           <h3 class="cs-h3">The cockpit in different situations</h3>
           <p class="cs-text">Speed stays on the left and energy on the right. The centre changes with the situation, and “autonomy gained” stays on screen as a reward for good braking.</p>
           <div class="cs-grid cs-grid--3">
-            <figure><img src="assets/img/elettra/cockpit-maps.jpg" alt="Cockpit with navigation map in the centre" loading="lazy"><figcaption>Navigation</figcaption></figure>
-            <figure><img src="assets/img/elettra/cockpit-adas.jpg" alt="Cockpit with driver-assistance view of the lane and cars ahead" loading="lazy"><figcaption>Driver assistance</figcaption></figure>
-            <figure><img src="assets/img/elettra/cockpit-weather.jpg" alt="Cockpit with weather in the centre" loading="lazy"><figcaption>Weather</figcaption></figure>
+            <figure><img src="assets/img/elettra/cockpit-maps.jpg" alt="Cockpit with navigation map in the centre" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/cockpit-adas.jpg" alt="Cockpit with driver-assistance view of the lane and cars ahead" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/cockpit-weather.jpg" alt="Cockpit with weather in the centre" loading="lazy"></figure>
           </div>
 
           <h3 class="cs-h3">After the drive</h3>
           <p class="cs-text">While the car is moving, the central display shows only a splash screen. Once parked, it shows a dashboard with the current trip, autonomy and rewards. Every trip stays in a list, with its route, optimal and improvable brakes, kilometres gained and kilometres still gainable, plus a grade. Medals reward the kilometres recovered over time.</p>
-          <figure class="cs-figure"><img src="assets/img/elettra/hud-car.jpg" alt="Elettra head-up display inside the car" loading="lazy"><figcaption>While driving, the head-up display and cockpit give the feedback and the central display stays on the splash screen.</figcaption></figure>
+          <figure class="cs-figure"><img src="assets/img/elettra/hud-car.jpg" alt="Elettra head-up display inside the car" loading="lazy"></figure>
           <div class="cs-grid cs-grid--2">
-            <figure><img src="assets/img/elettra/after-dashboard.jpg" alt="Central display dashboard with current trip, your trips, rewards and autonomy" loading="lazy"><figcaption>Dashboard</figcaption></figure>
-            <figure><img src="assets/img/elettra/after-trips.jpg" alt="Central display list of past trips" loading="lazy"><figcaption>Your trips</figcaption></figure>
-            <figure><img src="assets/img/elettra/after-trip.jpg" alt="Trip summary with route map, grade, 8 optimal brakes, 2 improvable brakes and kilometres gained" loading="lazy"><figcaption>Trip summary</figcaption></figure>
-            <figure><img src="assets/img/elettra/after-grade.jpg" alt="End-of-trip screen with a B+ grade" loading="lazy"><figcaption>Grade at the end of the trip</figcaption></figure>
-            <figure><img src="assets/img/elettra/after-medal.jpg" alt="New medal screen: Right track, 100 km of autonomy earned" loading="lazy"><figcaption>New medal</figcaption></figure>
-            <figure><img src="assets/img/elettra/after-rewards.jpg" alt="Rewards screen with medal categories" loading="lazy"><figcaption>Rewards</figcaption></figure>
+            <figure><img src="assets/img/elettra/after-dashboard.jpg" alt="Central display dashboard with current trip, your trips, rewards and autonomy" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/after-trips.jpg" alt="Central display list of past trips" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/after-trip.jpg" alt="Trip summary with route map, grade, 8 optimal brakes, 2 improvable brakes and kilometres gained" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/after-grade.jpg" alt="End-of-trip screen with a B+ grade" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/after-medal.jpg" alt="New medal screen: Right track, 100 km of autonomy earned" loading="lazy"></figure>
+            <figure><img src="assets/img/elettra/after-rewards.jpg" alt="Rewards screen with medal categories" loading="lazy"></figure>
           </div>
-          <figure class="cs-figure"><video src="assets/video/elettra.mp4" poster="assets/img/elettra-poster.jpg" controls playsinline preload="metadata"></video><figcaption>Project video</figcaption></figure>
+          <figure class="cs-figure"><video src="assets/video/elettra.mp4" poster="assets/img/elettra-poster.jpg" controls playsinline preload="metadata"></video></figure>
         </section>
       </div>
     </div>
