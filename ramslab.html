@@ -54,7 +54,7 @@
           <div class="cs-cards">
             <div class="cs-card"><h4>Performance</h4><p>A defined triangle budget and levels of detail, so that only nearby geometry is rendered in full.</p></div>
             <div class="cs-card"><h4>Realism</h4><p>Real terrain and road layouts, buildings true to the local architecture, and markings and signage that comply with traffic regulations.</p></div>
-            <div class="cs-card"><h4>Immersion</h4><p>Vegetation as crossed billboards with alpha clipping, stereo-compatible shaders and consistent colour.</p></div>
+            <div class="cs-card"><h4>Immersion</h4><p>Realistic vegetation, stereo-compatible shaders and consistent colour.</p></div>
             <div class="cs-card"><h4>Unity integration</h4><p>FBX tiles and a Unity package that rebuilds the scene and its materials automatically.</p></div>
           </div>
         </section>
@@ -62,7 +62,7 @@
         <section class="cs-section" id="manual" data-toc="Manual workflow">
           <p class="cs-eyebrow">Manual workflow</p>
           <h2 class="cs-h2">Open map data as a base, every layer finished by hand.</h2>
-          <p class="cs-text">We started with a manual pipeline in Blender: OpenStreetMap and Blosm for roads and footprints, Buildify for the buildings, everything else by hand, then tiles for Unity. This phase defined what works best in the simulator, which texture sources to use and an efficient workflow from an empty scene to simulation.</p>
+          <p class="cs-text">We started with a manual pipeline in Blender: open source add-ons for roads and buildings, everything else by hand, then tiles for Unity. This phase defined what works best in the simulator, which texture sources to use and an efficient workflow from an empty scene to simulation.</p>
           <h3 class="cs-h3">A town</h3>
           <div class="cs-grid cs-grid--2">
             <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/town-top.jpg" alt="Top view of the town: road network with a roundabout, Buildify buildings and green lots" loading="lazy"></figure>
@@ -97,9 +97,9 @@
         <section class="cs-section" id="ai" data-toc="AI-assisted workflow">
           <p class="cs-eyebrow">AI-assisted workflow</p>
           <h2 class="cs-h2">An AI agent builds the place in Blender, following the rules of the simulation.</h2>
-          <p class="cs-text">The manual workflow is now automated. Claude works inside Blender and writes the Python that repeats the same steps, from data to Unity, following the rules defined by hand. Every layer is reviewed against the requirements and sent back until it is right.</p>
+          <p class="cs-text">The manual workflow is now automated. Claude works inside Blender from data to Unity, following the rules defined by hand. Every layer is reviewed against the requirements and sent back until it is right.</p>
           <h3 class="cs-h3">Oltrepò: a real road in the vineyards</h3>
-          <p class="cs-text">A real road in the Oltrepò hills, built on real data: the Regione Lombardia terrain model for every climb and descent, aerial photos for the vine rows, and OpenStreetMap for roads, buildings, woods, hedges and walls. The vegetation is made of cut-out images of local species on crossed planes.</p>
+          <p class="cs-text">A real road in the Oltrepò hills, built on real data.</p>
           <div class="cs-grid cs-grid--2">
             <figure style="grid-column: 1 / -1"><video src="assets/video/oltrepo-drive.mp4?v=8" poster="assets/img/ramslab/oltrepo-drive.jpg?v=8" autoplay muted loop playsinline aria-label="Drone-style flight along the Oltrepò road between vineyards and farmhouses"></video></figure>
             <figure style="grid-column: 1 / -1"><img src="assets/img/ramslab/oltrepo-ridge.jpg" alt="The Oltrepò road along a ridge, with trees, a farmhouse and hills in the distance" loading="lazy"></figure>
@@ -142,7 +142,7 @@
           <div class="cs-cards">
             <div class="cs-card"><h4>Exact where you move</h4><p>The terrain is simplified everywhere except on roads and trails, where the geometry stays exact.</p></div>
             <div class="cs-card"><h4>Only what can be seen</h4><p>Visibility is computed from eye height along the route; hidden trees and stones are removed.</p></div>
-            <div class="cs-card"><h4>Trees as billboards</h4><p>Two planes crossed at right angles: four triangles per plant.</p></div>
+            <div class="cs-card"><h4>Realistic but light</h4><p>Each plant is only a few triangles, so the vegetation looks realistic without weighing down the scene.</p></div>
           </div>
         </section>
 
