@@ -1,6 +1,10 @@
 const EMAIL = "compagnonichiara01@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/chiara-compagnoni-748645275";
 const INSTAGRAM = "https://www.instagram.com/cc.companions";
+// "Let's talk": Gmail compose on desktop (mailto does nothing without a mail app), mail app on phones
+const TALK = matchMedia("(hover: hover) and (pointer: fine)").matches
+  ? `href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=${EMAIL}" target="_blank" rel="noopener"`
+  : `href="mailto:${EMAIL}"`;
 
 // Order used by the "Previous/Next project" links at the bottom of each case study
 const PROJECTS = [
@@ -21,7 +25,7 @@ function renderChrome() {
     <header class="site-header">
       <div class="site-header__left">
         <a class="site-header__name" href="index.html#top">Hi, I'm Chiara</a>
-        <a class="btn btn--primary" href="mailto:${EMAIL}">Let's talk! <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--primary" ${TALK}>Let's talk! <span aria-hidden="true">↗</span></a>
       </div>
       <button class="btn btn--icon site-header__toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"></button>
       <nav id="site-nav" aria-label="Main">
@@ -34,7 +38,7 @@ function renderChrome() {
   document.body.insertAdjacentHTML("beforeend", `
     <footer class="site-footer">
       <div class="site-footer__row">
-        <a class="site-footer__title display" href="mailto:${EMAIL}">Let's talk!</a>
+        <a class="site-footer__title display" ${TALK}>Let's talk!</a>
         <div class="site-footer__links">
           <a href="mailto:${EMAIL}"><span class="small">Email /</span> <strong class="u">${EMAIL}</strong></a>
           <a href="${LINKEDIN}" target="_blank" rel="noopener"><span class="small">Linkedin /</span> <strong class="u">chiara-compagnoni</strong></a>
